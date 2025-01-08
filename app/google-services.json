@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "845175570080",
+    "project_id": "pam-firebase-ed99a",
+    "storage_bucket": "pam-firebase-ed99a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845175570080:android:bcd3121741fb822502d3c5",
+        "android_client_info": {
+          "package_name": "com.nadia.pertemuan11"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8yeKdVHsZh2iKfIa8uHgaskss4Z6nDdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
