@@ -2,6 +2,7 @@ package com.nadia.pertemuan11.repository
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.toObject
 import com.nadia.pertemuan11.model.Mahasiswa
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -36,8 +37,18 @@ class NetworkRepositoryMhs(
 
     }
 
-    override fun getMhs(nim: String): Flow<Mahasiswa> {
-        TODO("Not yet implemented")
+    override fun getMhs(nim: String): Flow<Mahasiswa> = callbackFlow {
+        val mhsDocument = firestore.collection("Mahaasiswa")
+            .document(nim)
+            .addSnapshotListener {value, error ->
+                if (value != null) {
+                    val mhs = value.toObject(Mahasiswa::class.java)!!
+                    trySend(mhs)
+                }
+            }
+        awaitClose{
+            mhsDocument.remove()
+        }
     }
 
     override suspend fun deletMhs(mahasiswa: Mahasiswa) {
