@@ -7,6 +7,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.nadia.pertemuan11.MahasiswaApplication
 import com.nadia.pertemuan11.ui.home.viewmodel.HomeViewModel
+import com.nadia.pertemuan11.ui.home.viewmodel.InsertViewModel
 
 
 object PenyediaViewModel {
@@ -14,7 +15,11 @@ object PenyediaViewModel {
         initializer {
             HomeViewModel(mahasiswaApp().container.repositoryMhs)
         }
-
+        initializer {
+            InsertViewModel (
+                mahasiswaApp().container.repositoryMhs
+            )
+        }
     }
 }
 fun CreationExtras.mahasiswaApp(): MahasiswaApplication =
