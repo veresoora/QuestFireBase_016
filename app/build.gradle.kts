@@ -62,5 +62,5 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
-
+    implementation(libs.androidx.navigation.compose)
 }
