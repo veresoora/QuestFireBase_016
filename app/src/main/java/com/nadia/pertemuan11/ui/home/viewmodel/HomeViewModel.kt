@@ -32,7 +32,7 @@ class HomeViewModel (
                 }
                 .collect{
                     mhsUiState = if (it.isEmpty()) {
-                        HomeUiState.Error(Exception("Belum afa data mahasiswa"))
+                        HomeUiState.Error(Exception("Belum ada data mahasiswa"))
                     } else {
                         HomeUiState.Success(it)
                     }
